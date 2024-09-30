@@ -5,6 +5,8 @@ inputs:
     required: true
   artifact:
     required: true
+  dir:
+    required: true
 
 runs:
   using: 'composite'
@@ -39,5 +41,5 @@ runs:
 
     - name: 'Unzip artifact'
       run: |
-        unzip "${{ inputs.artifact }}.zip" -d tmp
+        unzip "${{ inputs.artifact }}.zip" -d "${{ inputs.dir }}"
         rm ${{ inputs.artifact }}.zip
