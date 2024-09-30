@@ -1,0 +1,23 @@
+name: Test action
+
+on:
+  push:
+    paths:
+      - 'action.yml'
+
+  workflow_dispatch:
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: martis99/download-artifact@v1
+        with:
+          workflow: upload-artifact
+          artifact: artifact
+          dir: '.'
+
+      - name: Check file
+        run: -f file.txt
