@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: martis99/download-artifact@v1
+        uses: martis99/download-artifact@main
         with:
           workflow: upload-artifact
           artifact: artifact
