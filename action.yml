@@ -22,7 +22,6 @@ runs:
             status: "success",
             per_page: 1
           });
-          console.log('Runs: ', allRuns.data.workflow_runs);
           let run = allRuns.data.workflow_runs[0];
           let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
             owner: context.repo.owner,
