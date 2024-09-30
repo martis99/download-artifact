@@ -20,4 +20,5 @@ jobs:
           dir: '.'
 
       - name: Check file
-        run: -f file.txt
+        run: |
+          [ -f file.txt ]
