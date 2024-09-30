@@ -1,0 +1,19 @@
+name: Upload artifact
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload_artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create file
+        run: touch file.txt
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: autoinstall
+          path: |
+            ./file.txt
