@@ -40,6 +40,7 @@ runs:
           fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/${{ inputs.artifact }}.zip`, Buffer.from(download.data));
 
     - name: 'Unzip artifact'
+      shell: bash
       run: |
         unzip "${{ inputs.artifact }}.zip" -d "${{ inputs.dir }}"
         rm ${{ inputs.artifact }}.zip
