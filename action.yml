@@ -43,5 +43,6 @@ runs:
     - name: 'Unzip artifact'
       shell: bash
       run: |
+        mkdir -p "${{ inputs.dir }}"
         unzip "${{ inputs.artifact }}.zip" -d "${{ inputs.dir }}"
         rm ${{ inputs.artifact }}.zip
